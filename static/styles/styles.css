@@ -1,1 +1,348 @@
-    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: linear-gradient(45deg, #121212, #1a1a1a, #333333);
+    background-size: 300% 300%;
+    animation: gradientAnimation 10s ease infinite;
+    color: #E1E1E1;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    background-color: rgba(31, 31, 31, 0.9);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-size: 0.9rem;
+    color: #B0B0B0;
+    font-weight: 500;
+}
+
+input[type="text"],
+select {
+    padding: 8px;
+    font-size: 0.9rem;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background-color: #333;
+    color: #FFF;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: #00BFFF;
+    box-shadow: 0 0 5px rgba(0, 191, 255, 0.5);
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    background-color: #0078D4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease, transform 0.2s ease;
+    margin-top: 8px;
+}
+
+button:hover {
+    background-color: #005B99;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 191, 255, 0.4);
+}
+
+button.add {
+    margin-bottom: 10px;
+}
+
+button.edit,
+button.delete {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    background-color: #FF9900;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: background-color 0.3s ease;
+}
+
+button.edit:hover {
+    background-color: #CC7A00;
+}
+
+button.delete {
+    background-color: #FF3333;
+}
+
+button.delete:hover {
+    background-color: #D90000;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th,
+table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+table th {
+    background-color: #282828;
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+table td {
+    background-color: #222222;
+    color: #E1E1E1;
+}
+
+table td a {
+    color: #0078D4;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+table td a:hover {
+    color: #005B99;
+    text-decoration: underline;
+}
+
+.table-wrapper {
+    max-height: 250px;
+    overflow-y: auto;
+    margin-top: 15px;
+}
+
+a {
+    color: #0078D4;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #005B99;
+    text-decoration: underline;
+}
+
+.total-cost-link {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.total-cost-link a {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #0078D4;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #282828;
+}
+
+.total-cost-link a:hover {
+    background-color: #444;
+}
+
+.total-costs-container {
+    width: 100%;
+    max-width: 900px;
+    background-color: rgba(31, 31, 31, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    margin: 20px auto;
+    text-align: center;
+    color: #E1E1E1;
+}
+
+.total-costs-container h2 {
+    font-size: 2rem;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.total-costs-container p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.total-costs-container .total-costs {
+    margin-top: 20px;
+}
+
+.total-costs-container .total-costs p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.total-costs-container .back-link {
+    margin-top: 30px;
+}
+
+.total-costs-container .back-link a {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #0078D4;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #282828;
+    transition: background-color 0.3s ease;
+}
+
+.total-costs-container .back-link a:hover {
+    background-color: #444;
+}
+
+@media (max-width: 768px) {
+    body {
+        background: linear-gradient(45deg, #121212, #1a1a1a);
+        background-size: 200% 200%;
+        animation: gradientAnimationMobile 8s ease infinite;
+    }
+
+    @keyframes gradientAnimationMobile {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 50% 50%;
+        }
+        100% {
+            background-position: 100% 50%;
+        }
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 10px;
+        gap: 8px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+        margin-top: 10px;
+    }
+
+    form {
+        gap: 6px;
+    }
+
+    input[type="text"],
+    select,
+    button {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    table th,
+    table td {
+        padding: 8px;
+    }
+
+    .table-wrapper {
+        max-height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        background: linear-gradient(45deg, #121212, #1a1a1a);
+        animation: gradientAnimationMobile 6s ease infinite;
+    }
+
+    .container {
+        padding: 8px;
+        gap: 6px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    input[type="text"],
+    select,
+    button {
+        font-size: 0.75rem;
+        padding: 6px;
+    }
+
+    table th,
+    table td {
+        padding: 6px;
+    }
+
+    .table-wrapper {
+        max-height: 150px;
+    }
+}

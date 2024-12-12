@@ -5,14 +5,18 @@
 {% endblock %}
 
 {% block body %}
-<section>
+<section class="total-costs-container">
     <h2>Total Subscription Costs</h2>
     <p>Here are the total costs for all your subscriptions:</p>
 
-    <p>Weekly Total: {{ total_weekly }}kr</p>
-    <p>Monthly Total: {{ total_monthly }}kr</p>
-    <p>Yearly Total: {{ total_yearly }}kr</p>
+    <div class="total-costs">
+        <p><strong>Weekly Total:</strong> {{ total_weekly }}kr</p>
+        <p><strong>Monthly Total:</strong> {{ total_monthly }}kr</p>
+        <p><strong>Yearly Total:</strong> {{ total_yearly }}kr</p>
+    </div>
 
-    <a href="{{ url_for('index') }}">Go back to your subscriptions</a>
+    <div class="back-link">
+        <a href="{{ url_for('index') }}">Go back to your subscriptions</a>
+    </div>
 </section>
 {% endblock %}
