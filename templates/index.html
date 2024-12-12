@@ -2,6 +2,14 @@
 
 {% block head %}
 <title>Subscription Tracker</title>
+<script>
+    function confirmDelete(event) {
+        // Show a confirmation popup
+        if (!confirm("Are you sure you want to delete this subscription?")) {
+            event.preventDefault(); 
+        }
+    }
+</script>
 {% endblock %}
 
 {% block body %}
@@ -47,7 +55,7 @@
                 <td>{{ subscription[4] }}</td>
                 <td>
                     <a href="{{ url_for('edit', id=subscription[0]) }}">Edit</a>
-                    <form method="POST" action="{{ url_for('delete', id=subscription[0]) }}" style="display:inline;">
+                    <form method="POST" action="{{ url_for('delete', id=subscription[0]) }}" style="display:inline;" onsubmit="confirmDelete(event)">
                         <button type="submit">Delete</button>
                     </form>
                 </td>
