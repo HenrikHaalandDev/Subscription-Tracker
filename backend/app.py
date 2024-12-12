@@ -49,14 +49,14 @@ def calculate_total_costs():
             price = float(price)
             if frequency == 'weekly':
                 total_weekly += price
-                total_monthly += price * 4.33  # 4.33 weeks in a month
-                total_yearly += price * 52  # 52 weeks in a year
+                total_monthly += price * 4.348  # 4.348 weeks in a month
+                total_yearly += price * 52.18  # 52.18 weeks in a year
             elif frequency == 'monthly':
-                total_weekly += price / 4.33  # Convert monthly to weekly
+                total_weekly += price / 4.348  # Convert monthly to weekly
                 total_monthly += price
                 total_yearly += price * 12  # 12 months in a year
             elif frequency == 'yearly':
-                total_weekly += price / 52  # Convert yearly to weekly
+                total_weekly += price / 52.18  # Convert yearly to weekly
                 total_monthly += price / 12  # Convert yearly to monthly
                 total_yearly += price
         except ValueError:
