@@ -74,13 +74,13 @@ def index():
 The `calculate_total_costs()` function adds up costs based on how often you pay:  
 ```python  
 if frequency == 'weekly':  
-    total_monthly += price * 4.33  # Converts weekly to monthly  
-    total_yearly += price * 52  # Converts weekly to yearly  
+    total_monthly += price * 4.348  # Converts weekly to monthly  
+    total_yearly += price * 52.18  # Converts weekly to yearly  
 elif frequency == 'monthly':  
-    total_weekly += price / 4.33  
+    total_weekly += price / 4.348  
     total_yearly += price * 12  
 elif frequency == 'yearly':  
-    total_weekly += price / 52  
+    total_weekly += price / 52.18  
     total_monthly += price / 12  
 ```  
 
@@ -148,3 +148,4 @@ def delete(id):
 2. Add your subscriptions using the form.  
 3. View, edit, or delete your subscriptions in the table.  
 4. Check your weekly, monthly, and yearly spending on the "Total Subscription Costs" page.  
+5. 
