@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<title>Subscription Tracker</title>
+{% endblock %}
+
+{% block body %}
+<section>
+    <h2>Add Subscription</h2>
+    <form method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price" required><br>
+
+        <label for="frequency">Frequency:</label>
+        <select name="frequency" id="frequency">
+            <option value="weekly">Weekly</option>
+            <option value="monthly">Monthly</option>
+            <option value="yearly">Yearly</option>
+        </select><br>
+
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description"><br>
+
+        <button type="submit">Add</button>
+    </form>
+
+    <h2>Your Subscriptions</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Frequency</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for subscription in subscriptions %}
+            <tr>
+                <td>{{ subscription[1] }}</td>
+                <td>{{ subscription[2] }}</td>
+                <td>{{ subscription[3] }}</td>
+                <td>{{ subscription[4] }}</td>
+                <td>
+                    <a href="{{ url_for('edit', id=subscription[0]) }}">Edit</a>
+                    <form method="POST" action="{{ url_for('delete', id=subscription[0]) }}" style="display:inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br>
+    <a href="{{ url_for('calculate') }}">Go to Total Subscription Costs</a>
+</section>
+{% endblock %}

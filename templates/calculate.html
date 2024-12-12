@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<title>Total Subscription Costs</title>
+{% endblock %}
+
+{% block body %}
+<section>
+    <h2>Total Subscription Costs</h2>
+    <p>Here are the total costs for all your subscriptions:</p>
+
+    <p>Weekly Total: {{ total_weekly }}kr</p>
+    <p>Monthly Total: {{ total_monthly }}kr</p>
+    <p>Yearly Total: {{ total_yearly }}kr</p>
+
+    <a href="{{ url_for('index') }}">Go back to your subscriptions</a>
+</section>
+{% endblock %}

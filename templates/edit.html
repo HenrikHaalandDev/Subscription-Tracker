@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<title>Edit Subscription</title>
+{% endblock %}
+
+{% block body %}
+<section>
+    <h2>Edit Subscription</h2>
+
+    <form method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ subscription[1] }}" required><br>
+
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price" value="{{ subscription[2] }}" required><br>
+
+        <label for="frequency">Frequency:</label>
+        <select name="frequency" id="frequency">
+            <option value="weekly" {% if subscription[3] == 'weekly' %}selected{% endif %}>Weekly</option>
+            <option value="monthly" {% if subscription[3] == 'monthly' %}selected{% endif %}>Monthly</option>
+            <option value="yearly" {% if subscription[3] == 'yearly' %}selected{% endif %}>Yearly</option>
+        </select><br>
+
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" value="{{ subscription[4] }}"><br>
+
+        <button type="submit">Save Changes</button>
+    </form>
+</section>
+{% endblock %}
